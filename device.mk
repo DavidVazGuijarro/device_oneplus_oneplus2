@@ -191,17 +191,20 @@ $(call add-product-dex-preopt-module-config,com.cyanogenmod.keyhandler,disable)
 PRODUCT_PACKAGES += \
     keystore.msm8994
 
-# Media profile
+# Media
 PRODUCT_COPY_FILES += \
-    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
 
-# Media
+PRODUCT_COPY_FILES += \
+    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
+    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
+
+# OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
+    libdashplayer \
     libdivxdrmdecrypt \
     libextmedia_jni \
     libOmxAacEnc \
@@ -209,13 +212,14 @@ PRODUCT_PACKAGES += \
     libOmxCore \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
+    libOmxSwVencMpeg4 \
+    libOmxSwVencHevc \
     libOmxVdec \
     libOmxVenc \
+    libOmxVidcCommon \
     libqcmediaplayer \
     libstagefrighthw \
     libstagefright_soft_flacdec
-
-PRODUCT_BOOT_JARS += qcmediaplayer
 
 # Camera
 PRODUCT_PACKAGES += \
